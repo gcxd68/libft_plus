@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdosch <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gdosch <gdosch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:18:52 by gdosch            #+#    #+#             */
-/*   Updated: 2024/10/17 11:18:55 by gdosch           ###   ########.fr       */
+/*   Updated: 2025/04/02 17:04:41 by gdosch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <limits.h>
 # include <stdarg.h>
+# include <stdbool.h>
 # include <stdint.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -87,6 +88,7 @@ char		*ft_strnstr(const char *big, const char *little, size_t len);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strtrim(const char *s1, const char *set);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
+void		*ft_ternary(bool condition, void *true_val, void *false_val);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
 char		*get_next_line(int fd);
