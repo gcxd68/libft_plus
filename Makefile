@@ -17,6 +17,13 @@ SRC =		ft_atoi.c \
 			ft_bzero.c \
 			ft_calloc.c \
 			ft_dprintf.c \
+			ft_dynarr_add_char.c \
+			ft_dynarr_add_int.c \
+			ft_dynarr_add_ptr.c \
+			ft_dynarr_free.c \
+			ft_dynarr_from.c \
+			ft_dynarr_init.c \
+			ft_dynarr_remove.c \
 			ft_free_arr.c \
 			ft_free_int_arr.c \
 			ft_int_arr_get.c \
