@@ -88,6 +88,8 @@ void		ft_putstr_fd(char *s, int fd);
 int			ft_rand(int min, int max);
 void		*ft_realloc(void *ptr, size_t old_size, size_t new_size);
 char		**ft_split(char const *s, char c);
+int			ft_sprintf(char *str, const char *format, ...)
+			__attribute__((format(printf, 2, 3)));
 char		*ft_strchr(const char *s, int c);
 int			ft_strcmp(const char *s1, const char *s2);
 char		*ft_strdup(char *s);

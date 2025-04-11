@@ -56,6 +56,7 @@ SRC =		ft_atoi.c \
 			ft_rand.c \
 			ft_realloc.c \
 			ft_split.c \
+			ft_sprintf.c \
 			ft_strchr.c \
 			ft_strcmp.c \
 			ft_strdup.c \
