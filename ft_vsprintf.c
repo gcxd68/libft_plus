@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sprintf.c                                       :+:      :+:    :+:   */
+/*   ft_vsprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdosch <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/13 12:45:48 by gdosch            #+#    #+#             */
-/*   Updated: 2025/05/13 12:45:51 by gdosch           ###   ########.fr       */
+/*   Created: 2025/05/13 12:47:55 by gdosch            #+#    #+#             */
+/*   Updated: 2025/05/13 12:47:57 by gdosch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_sprintf(char *str, const char *format, ...)
+int	ft_vsprintf(char *str, const char *format, va_list args)
 {
-	va_list	args;
-	int		count;
+	int	count;
 
-	va_start(args, format);
-	count = ft_vsprintf(str, format, args);
-	va_end(args);
+	count = ft_vsnprintf(str, SIZE_MAX, format, args);
 	return (count);
 }

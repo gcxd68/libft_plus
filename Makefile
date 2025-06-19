@@ -55,11 +55,13 @@ SRC =		ft_atoi.c \
 			ft_putstr_fd.c \
 			ft_rand.c \
 			ft_realloc.c \
+			ft_snprintf.c \
 			ft_split.c \
 			ft_sprintf.c \
 			ft_strchr.c \
 			ft_strcmp.c \
 			ft_strdup.c \
+			ft_stricmp.c \
 			ft_striteri.c \
 			ft_strjoin.c \
 			ft_strlcat.c \
@@ -74,6 +76,9 @@ SRC =		ft_atoi.c \
 			ft_ternary.c \
 			ft_tolower.c \
 			ft_toupper.c \
+			ft_vprintf.c \
+			ft_vsnprintf.c \
+			ft_vsprintf.c \
 			get_next_line.c
 
 OBJ =		$(SRC:.c=.o)

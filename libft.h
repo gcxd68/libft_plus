@@ -19,12 +19,15 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <stdio.h>
+//# include <string.h>
 # include <time.h>
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+
+# define PRINTF_BUFFER_SIZE 4096
 
 typedef struct s_list
 {
@@ -87,12 +90,15 @@ void		ft_putnbr_fd(int n, int fd);
 void		ft_putstr_fd(char *s, int fd);
 int			ft_rand(int min, int max);
 void		*ft_realloc(void *ptr, size_t old_size, size_t new_size);
+int			ft_snprintf(char *str, size_t size, const char *format, ...)
+			__attribute__((format(printf, 3, 4)));
 char		**ft_split(char const *s, char c);
 int			ft_sprintf(char *str, const char *format, ...)
 			__attribute__((format(printf, 2, 3)));
 char		*ft_strchr(const char *s, int c);
 int			ft_strcmp(const char *s1, const char *s2);
 char		*ft_strdup(char *s);
+int			ft_stricmp(const char *s1, const char *s2);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_strjoin(char const *s1, char const *s2);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
@@ -107,6 +113,10 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 void		*ft_ternary(bool condition, void *true_val, void *false_val);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
+int			ft_vprintf(const char *format, va_list args);
+int			ft_vsnprintf(char *str,
+				size_t size, const char *format, va_list args);
+int			ft_vsprintf(char *str, const char *format, va_list args);
 char		*get_next_line(int fd);
 
 #endif
