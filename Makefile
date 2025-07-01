@@ -3,14 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gdosch <gdosch@student.42.fr>              +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/17 10:34:21 by gdosch            #+#    #+#              #
-#    Updated: 2025/04/02 17:04:58 by gdosch           ###   ########.fr        #
+#    Updated: 2025/06/25 17:40:18 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC =		ft_atoi.c \
+SRC =		ft_arrlen.c \
+			ft_atoi.c \
 			ft_atoi_base.c \
 			ft_atol.c \
 			ft_atoll.c \
@@ -76,10 +77,12 @@ SRC =		ft_atoi.c \
 			ft_ternary.c \
 			ft_tolower.c \
 			ft_toupper.c \
+			ft_vdprintf.c \
 			ft_vprintf.c \
 			ft_vsnprintf.c \
 			ft_vsprintf.c \
-			get_next_line.c
+			get_next_line.c \
+			safe_gnl.c
 
 OBJ =		$(SRC:.c=.o)
 

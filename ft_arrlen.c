@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dprintf.c                                       :+:      :+:    :+:   */
+/*   ft_arrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gdosch <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 11:46:36 by gdosch            #+#    #+#             */
-/*   Updated: 2025/06/25 17:37:52 by marvin           ###   ########.fr       */
+/*   Created: 2025/06/26 11:45:37 by gdosch            #+#    #+#             */
+/*   Updated: 2025/06/26 11:45:39 by gdosch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_dprintf(int fd, const char *format, ...)
+size_t	ft_arrlen(void **arr)
 {
-	va_list	args;
-	int		ret;
+	size_t	i;
 
-	va_start(args, format);
-	ret = ft_vdprintf(fd, format, args);
-	va_end(args);
-	return (ret);
+	if (!arr)
+		return (0);
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gdosch <gdosch@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:18:52 by gdosch            #+#    #+#             */
-/*   Updated: 2025/04/02 17:04:41 by gdosch           ###   ########.fr       */
+/*   Updated: 2025/06/25 17:41:50 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <stdio.h>
-//# include <string.h>
 # include <time.h>
 # include <unistd.h>
 
@@ -42,6 +41,7 @@ typedef struct s_dynarr
 	size_t			elem_size;
 }	t_dynarr;
 
+size_t		ft_arrlen(void **arr);
 int			ft_atoi(const char *nptr);
 int			ft_atoi_base(const char *nptr, char *base);
 long		ft_atol(const char *nptr);
@@ -57,7 +57,7 @@ void		ft_dynarr_free(void *arr);
 void		*ft_dynarr_from(void *static_arr, size_t elem_size, size_t count);
 void		*ft_dynarr_init(size_t elem_size, size_t capacity);
 void		ft_dynarr_remove(void **arr_ptr, size_t index);
-void		ft_free_arr(void ***arr);
+void		*ft_free_arr(void ***arr);
 void		ft_free_int_arr(int ***arr, size_t size);
 int			ft_int_arr_get(const int *arr, size_t size,
 				size_t idx, int def_value);
@@ -113,10 +113,12 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 void		*ft_ternary(bool condition, void *true_val, void *false_val);
 int			ft_tolower(int c);
 int			ft_toupper(int c);
+int			ft_vdprintf(int fd, const char *format, va_list args);
 int			ft_vprintf(const char *format, va_list args);
 int			ft_vsnprintf(char *str,
 				size_t size, const char *format, va_list args);
 int			ft_vsprintf(char *str, const char *format, va_list args);
 char		*get_next_line(int fd);
+int			safe_gnl(int fd, char **line);
 
 #endif
