@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static ssize_t	ft_build_line(char **line, char **buffer, size_t *len)
 {
