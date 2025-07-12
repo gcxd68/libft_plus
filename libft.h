@@ -119,6 +119,6 @@ int			ft_vsnprintf(char *str,
 				size_t size, const char *format, va_list args);
 int			ft_vsprintf(char *str, const char *format, va_list args);
 char		*get_next_line(int fd);
-int			safe_gnl(int fd, char **line);
+ssize_t		safe_gnl(int fd, char **line);
 
 #endif
