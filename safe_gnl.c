@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 static ssize_t	ft_build_line(char **line, char **buffer, size_t *len)
 {
@@ -57,8 +57,10 @@ ssize_t	safe_gnl(int fd, char **line)
 	int			ret;
 	size_t		len;
 
-	if (fd < 0 || BUFFER_SIZE < 1)
-		return (-1);
+	if (fd < 0)
+		return (-3);
+	if (BUFFER_SIZE < 1)
+		return (-4);
 	*line = ft_calloc(1, 1);
 	if (!*line)
 		return (-1);
