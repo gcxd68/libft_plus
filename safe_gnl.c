@@ -15,19 +15,18 @@
 static ssize_t	ft_build_line(char **line, char **buffer, size_t *len)
 {
 	char			*tmp;
-	size_t			chunk_len;
 	size_t			i;
 
 	i = 0;
 	while ((*buffer)[i] && (*buffer)[i] != '\n')
 		i++;
-	chunk_len = i + ((*buffer)[i] == '\n');
-	tmp = ft_realloc(*line, *len + 1, *len + chunk_len + 1);
+	if ((*buffer)[i] == '\n')
+		i++;
+	tmp = ft_realloc(*line, *len + 1, *len + i + 1);
 	if (!tmp)
-		return (-1);
+		return (-2);
 	*line = tmp;
-	ft_strlcpy(*line + *len, *buffer, chunk_len + 1);
-	*len += chunk_len;
+	ft_strlcpy(*line + *len, *buffer, i + 1);
 	return (i);
 }
 
@@ -37,33 +36,35 @@ static ssize_t	ft_parse_data(int fd, char *buffer, char **line, size_t *len)
 
 	if (!*buffer)
 	{
-		ret = read(fd, buffer, BUFFER_SIZE);
+		ret = read(fd, buffer, GNL_BUFFER_SIZE);
 		if (ret <= 0)
 			return (ret);
 		buffer[ret] = '\0';
 	}
 	ret = ft_build_line(line, &buffer, len);
 	if (ret < 0)
-		return (-2);
-	if (buffer[ret] == '\0')
+		return (ret);
+	*len += ret;
+	if (ret && buffer[ret - 1] != '\n')
 		return (((*buffer) = '\0'), 1);
-	ft_memcpy(buffer, buffer + ret + 1, ft_strlen(buffer) - ret);
+	ft_memcpy(buffer, buffer + ret, ft_strlen(buffer) - ret + 1);
 	return (0);
 }
 
 ssize_t	safe_gnl(int fd, char **line)
 {
-	static char	buffer[BUFFER_SIZE + 1];
+	static char	buffer[GNL_BUFFER_SIZE + 1];
 	int			ret;
 	size_t		len;
 
 	if (fd < 0)
-		return (-3);
-	if (BUFFER_SIZE < 1)
 		return (-4);
+	if (GNL_BUFFER_SIZE < 1)
+		return (-3);
+	errno = 0;
 	*line = ft_calloc(1, 1);
 	if (!*line)
-		return (-1);
+		return (-2);
 	len = 0;
 	ret = 1;
 	while (ret > 0)

@@ -37,7 +37,7 @@ static ssize_t	ft_parse_data(int fd, char *buffer, char **line)
 
 	if (!*buffer)
 	{
-		ret = read(fd, buffer, BUFFER_SIZE);
+		ret = read(fd, buffer, GNL_BUFFER_SIZE);
 		if (ret <= 0)
 			return (ret);
 		buffer[ret] = '\0';
@@ -53,11 +53,11 @@ static ssize_t	ft_parse_data(int fd, char *buffer, char **line)
 
 char	*get_next_line(int fd)
 {
-	static char	buffer[BUFFER_SIZE + 1];
+	static char	buffer[GNL_BUFFER_SIZE + 1];
 	char		*line;
 	int			ret;
 
-	if (fd < 0 || BUFFER_SIZE < 1)
+	if (fd < 0 || GNL_BUFFER_SIZE < 1)
 		return (NULL);
 	line = ft_calloc(1, 1);
 	if (!line)

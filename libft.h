@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <errno.h>
 # include <limits.h>
 # include <stdarg.h>
 # include <stdbool.h>
@@ -22,11 +23,13 @@
 # include <time.h>
 # include <unistd.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+# ifndef GNL_BUFFER_SIZE
+#  define GNL_BUFFER_SIZE 4096
 # endif
 
-# define PRINTF_BUFFER_SIZE 4096
+# ifndef PRINTF_BUFFER_SIZE
+#  define PRINTF_BUFFER_SIZE 4096
+# endif
 
 typedef struct s_list
 {

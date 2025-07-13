@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdarg.h>
-#include <stdio.h>
 
 int	ft_snprintf(char *str, size_t size, const char *format, ...)
 {
