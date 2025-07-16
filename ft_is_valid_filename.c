@@ -22,8 +22,8 @@ bool	ft_is_valid_filename(const char *name, const char *ext)
 	name_len = ft_strlen(name);
 	ext_len = ft_strlen(ext);
 	if (name_len < ext_len + 2
-		|| name[name_len - ext_len - 1] != '.'
 		|| ft_strncmp(&name[name_len - ext_len], ext, ext_len)
+		|| name[name_len - ext_len - 1] != '.'
 		|| name[name_len - ext_len - 2] == '/')
 		return (false);
 	return (true);
