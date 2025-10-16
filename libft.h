@@ -60,8 +60,7 @@ void		ft_dynarr_free(void *arr);
 void		*ft_dynarr_from(void *static_arr, size_t elem_size, size_t count);
 void		*ft_dynarr_init(size_t elem_size, size_t capacity);
 void		ft_dynarr_remove(void **arr_ptr, size_t index);
-void		*ft_free_arr(void ***arr);
-void		ft_free_int_arr(int ***arr, size_t size);
+void		*ft_free_arr(void ***arr, size_t size);
 int			ft_int_arr_get(const int *arr, size_t size,
 				size_t idx, int def_value);
 int			ft_isalnum(int c);

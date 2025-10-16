@@ -12,20 +12,6 @@
 
 #include "libft.h"
 
-static char	**ft_free(char **arr, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
-	return (NULL);
-}
-
 static size_t	ft_count_strs(char const *s, char c)
 {
 	size_t	i;
@@ -59,7 +45,7 @@ static char	**ft_fill_strs(char **arr, char const *s, char c)
 		{
 			arr[j] = ft_substr(s, str_start, i - str_start);
 			if (!arr[j])
-				return (ft_free(arr, j));
+				return (ft_free_arr((void ***)&arr, j));
 			j++;
 		}
 		i++;

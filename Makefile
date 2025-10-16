@@ -26,7 +26,6 @@ SRC =		ft_arrlen.c \
 			ft_dynarr_init.c \
 			ft_dynarr_remove.c \
 			ft_free_arr.c \
-			ft_free_int_arr.c \
 			ft_int_arr_get.c \
 			ft_isalnum.c \
 			ft_isalpha.c \
