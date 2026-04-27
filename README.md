@@ -1,4 +1,4 @@
-# Libft Plus
+# Libft
 
 An extended and enhanced custom C library for the 42 school curriculum.
 
@@ -41,7 +41,7 @@ Re-implementation of the standard output formatters:
 ### 6. File Reading
 - `get_next_line` / `safe_gnl`: Read text from file descriptors line by line.
 
-### 7. Extra Utilities (The "Plus" features)
+### 7. Extra Utilities
 Additional quality-of-life helpers:
 - **Numbers & Parsing**: `ft_atol`, `ft_atoll`, `ft_atoi_base`
 - **Memory**: `ft_realloc`, `ft_free_arr`
